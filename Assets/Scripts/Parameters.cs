@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Parameters : MonoBehaviour
 {
-    // Start is called before the first frame update
     public const int ms_in_sec = 1; // minimum unit - sec 1000;
     public const int ms_in_min = ms_in_sec * 60;
     public const int ms_in_hour = ms_in_min * 60;
@@ -16,6 +15,7 @@ public class Parameters : MonoBehaviour
     public float time;
     public float thirst;
     public float coef = 0.1f;
+    public float timeRate = 100f;
     public long lastSleep;
     void Start()
     {
@@ -31,7 +31,7 @@ public class Parameters : MonoBehaviour
         hunger -= coef * Time.deltaTime;
         thirst -= coef * Time.deltaTime;
         happiness -= coef * Time.deltaTime;
-        time += 1;
+        time += timeRate * Time.deltaTime;
         if (lastSleep < (int)(time % ms_in_day))
         {
             happiness -= coef * ((int)(time / ms_in_day) - lastSleep) * Time.deltaTime;

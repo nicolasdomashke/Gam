@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class TaleUIActions : MonoBehaviour
 {
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q)) { 
+        bool isQPressed = Input.GetKeyDown(KeyCode.Q);
+        if (isQPressed) { 
             this.gameObject.SetActive(false);
             Time.timeScale = 1.0f;
         }

@@ -13,26 +13,22 @@ public class QuestHandler : MonoBehaviour
     public Parameters PlayerParameters;
 
     public QuestManager manager;
-    public int id;
-    public string title;
-    public string tale;
-    public Dictionary<string, int> modifiers;
-    public List<string> nextQuestsAdress;
+    public QuestInfo questInfo;
 
     private const int maxTitleLength = 45; //if 1280*720 , 36 pt
     private const int maxTaleLength = 500; //if 1280*720 , 36 pt
 
     public void ShowTale()
     {
-        Time.timeScale = 0.2f;
+        Time.timeScale = 0f;
         manager.questUI.SetActive(true);
         foreach (TMP_Text text in manager.questUI.GetComponentsInChildren<TMP_Text>())
         {
             if(text.gameObject.name == "title")
             {
-                if (title.Length > maxTitleLength)
+                if (questInfo.title.Length > maxTitleLength)
                 {
-                    string[] words = title.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                    string[] words = questInfo.title.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
                     string res = "";
                     foreach (string word in words)
                     {
@@ -49,15 +45,15 @@ public class QuestHandler : MonoBehaviour
                 }
                 else
                 {
-                    text.text = title;
+                    text.text = questInfo.title;
                 }
 
             }
             if(text.gameObject.name == "tale")
             {
-                if(tale.Length > maxTaleLength)
+                if(questInfo.tale.Length > maxTaleLength)
                 {
-                    string[] words = tale.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                    string[] words = questInfo.tale.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
                     string res = "";
                     foreach (string word in words)
                     {
@@ -74,7 +70,7 @@ public class QuestHandler : MonoBehaviour
                 }
                 else
                 {
-                    text.text = tale;
+                    text.text = questInfo.tale;
                 }
             }
         }
@@ -82,34 +78,35 @@ public class QuestHandler : MonoBehaviour
     }
     public void OnTriggerStay2D(Collider2D collision)
     {
-        if (Input.GetKeyDown(KeyCode.E) && collision.tag == "Player")
+        bool isEPressed = Input.GetKey(KeyCode.E);
+        if (isEPressed && collision.tag == "Player")
         {
             ShowTale();
-            foreach (var modName in modifiers.Keys)
+            foreach (var modName in questInfo.modifiers.Keys)
             {
                 switch (modName)
                 {
                     case "thirst":
-                        PlayerParameters.thirst += modifiers[modName];
+                        PlayerParameters.thirst += questInfo.modifiers[modName];
                         break;
                     case "hunger":
-                        PlayerParameters.hunger += modifiers[modName];
+                        PlayerParameters.hunger += questInfo.modifiers[modName];
                         break;
                     case "happiness":
-                        PlayerParameters.happiness += modifiers[modName];
+                        PlayerParameters.happiness += questInfo.modifiers[modName];
                         break;
                     case "time":
-                        PlayerParameters.time += modifiers[modName];
+                        PlayerParameters.time += questInfo.modifiers[modName];
                         break;
                     case "lastSleep":
-                        PlayerParameters.lastSleep = (int)(PlayerParameters.time % Parameters.ms_in_day) + 1 - modifiers[modName];
+                        PlayerParameters.lastSleep = (int)(PlayerParameters.time % Parameters.ms_in_day) + 1 - questInfo.modifiers[modName];
                         break;
                     default:
                         break;
                 }
             }
-            manager.activeQuests.Remove(id);
-            foreach (var addr in nextQuestsAdress)
+            manager.activeQuests.Remove(questInfo.id);
+            foreach (var addr in questInfo.nextQuestsAdress)
             {
                 manager.CreateNewQuest(addr);
             }
