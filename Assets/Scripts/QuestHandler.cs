@@ -15,8 +15,8 @@ public class QuestHandler : MonoBehaviour
     public QuestManager manager;
     public QuestInfo questInfo;
 
-    private const int maxTitleLength = 45; //if 1280*720 , 36 pt
-    private const int maxTaleLength = 500; //if 1280*720 , 36 pt
+    //private const int maxTitleLength = 45; //if 1280*720 , 36 pt
+    //private const int maxTaleLength = 500; //if 1280*720 , 36 pt
 
     public void ShowTale()
     {
@@ -26,52 +26,11 @@ public class QuestHandler : MonoBehaviour
         {
             if(text.gameObject.name == "title")
             {
-                if (questInfo.title.Length > maxTitleLength)
-                {
-                    string[] words = questInfo.title.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                    string res = "";
-                    foreach (string word in words)
-                    {
-                        if (res.Length + word.Length < maxTitleLength)
-                        {
-                            res += word+' ';
-                        }
-                        else
-                        {
-                            break;
-                        }
-                    }
-                    text.text = res.Trim();
-                }
-                else
-                {
-                    text.text = questInfo.title;
-                }
-
+                text.text = questInfo.title;
             }
-            if(text.gameObject.name == "tale")
+            else
             {
-                if(questInfo.tale.Length > maxTaleLength)
-                {
-                    string[] words = questInfo.tale.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                    string res = "";
-                    foreach (string word in words)
-                    {
-                        if (res.Length + word.Length < maxTaleLength)
-                        {
-                            res += word + ' ';
-                        }
-                        else
-                        {
-                            break;
-                        }
-                    }
-                    text.text = res.Trim();
-                }
-                else
-                {
-                    text.text = questInfo.tale;
-                }
+                text.text = questInfo.tale;
             }
         }
 

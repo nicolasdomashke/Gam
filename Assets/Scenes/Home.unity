@@ -7282,6 +7282,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1463983794}
     m_Modifications:
+    - target: {fileID: 775163671761170574, guid: 0a65a065ce7a0654b97d41c5783ce3ad, type: 3}
+      propertyPath: m_text
+      value: "\u0442\u0435\u043A\u0441\u0442"
+      objectReference: {fileID: 0}
+    - target: {fileID: 775163671761170574, guid: 0a65a065ce7a0654b97d41c5783ce3ad, type: 3}
+      propertyPath: m_overflowMode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 775163671761170574, guid: 0a65a065ce7a0654b97d41c5783ce3ad, type: 3}
+      propertyPath: m_pageToDisplay
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4475995388669671220, guid: 0a65a065ce7a0654b97d41c5783ce3ad, type: 3}
       propertyPath: m_Name
       value: TaleUI
@@ -7369,6 +7381,14 @@ PrefabInstance:
     - target: {fileID: 4518263556527878238, guid: 0a65a065ce7a0654b97d41c5783ce3ad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5168899954276129814, guid: 0a65a065ce7a0654b97d41c5783ce3ad, type: 3}
+      propertyPath: m_text
+      value: "\u0442\u0435\u043A\u0441\u0442"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5168899954276129814, guid: 0a65a065ce7a0654b97d41c5783ce3ad, type: 3}
+      propertyPath: m_overflowMode
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
