@@ -1,0 +1,20 @@
+{
+  "title": "Sleep",
+  "id": 1,
+  "tale": "I'm dead on my feet. Need to get some sleep",
+  "modifiers": {
+    "thirst": -20,
+    "hunger": -30,
+    "time": 28800,
+    "happiness": 5,
+    "lastSleep": 0
+  },
+  "scene": 0,
+  "spawnPos": [ -30, 30, 10 ],
+  "nextQuestsAdress": [
+    "assets/quests/sports.json",
+    "assets/quests/eat.json",
+    "assets/quests/drink.json",
+    "assets/quests/univer.json"
+  ]
+}

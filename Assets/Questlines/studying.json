@@ -1,0 +1,18 @@
+{
+  "title": "Studying in university",
+  "id": 14,
+  "tale": "How do I do all these lab works?..",
+  "modifiers": {
+    "thirst": -30,
+    "hunger": -30,
+    "time": 28800,
+    "happiness": -20
+  },
+  "scene": 1,
+  "spawnPos": [ -6.45, -1.17, 0.04 ],
+  "nextQuestsAdress": [
+    "./Assets/questlines/pe.json",
+    "./Assets/questlines/canteen.json",
+    "./Assets/questlines/home.json"
+  ]
+}

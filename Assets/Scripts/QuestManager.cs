@@ -11,6 +11,7 @@ public class QuestInfo
     public string title;
     public int id;
     public string tale;
+    public string minigame;
     public Dictionary<string,int> modifiers = new Dictionary<string,int>();
     public int scene;
     public float[] spawnPos = new float[3];
@@ -23,6 +24,7 @@ public class QuestInfo
 public struct InactiveQuestsStruct
 {
     public static Dictionary<int, HashSet<string>> inactiveQuestsForOtherscene = new Dictionary<int, HashSet<string>>();
+    public static QuestInfo currentQuest;
 }
 public class QuestManager : MonoBehaviour
 {

@@ -17,18 +17,20 @@ public class Movement : MonoBehaviour
     }
     void Update()
     {
-        float xSpeed = Input.GetAxisRaw("Horizontal");
-        float ySpeed = Input.GetAxisRaw("Vertical");
+        if (InactiveQuestsStruct.currentQuest == null) {
+            float xSpeed = Input.GetAxisRaw("Horizontal");
+            float ySpeed = Input.GetAxisRaw("Vertical");
 
-        rigidBody.velocity = new Vector2(xSpeed, ySpeed) * speedMultiplier;
-        animator.SetFloat("speed", rigidBody.velocity.magnitude);
-        if (xSpeed < -.01f)
-        {
-            sprite.flipX = true;
-        }
-        else if (xSpeed > .01f)
-        {
-            sprite.flipX = false;
+            rigidBody.velocity = new Vector2(xSpeed, ySpeed) * speedMultiplier;
+            animator.SetFloat("speed", rigidBody.velocity.magnitude);
+            if (xSpeed < -.01f)
+            {
+                sprite.flipX = true;
+            }
+            else if (xSpeed > .01f)
+            {
+                sprite.flipX = false;
+            }
         }
     }
 }

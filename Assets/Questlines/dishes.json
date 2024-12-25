@@ -1,0 +1,18 @@
+{
+  "title": "Washing dishes",
+  "id": 11,
+  "tale": "In this house we wash the plate after buckwheat immediately",
+  "minigame": "slider",
+  "modifiers": {
+    "thirst": -5,
+    "hunger": -5,
+    "time": 600,
+    "happiness": 0
+  },
+  "scene": 0,
+  "spawnPos": [ -5.47, -8.14, 0.04 ],
+  "nextQuestsAdress": [
+    "./Assets/questlines/drink.json",
+    "./Assets/questlines/univer.json"
+  ]
+}

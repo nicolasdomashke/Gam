@@ -14,13 +14,11 @@ public class QuestHandler : MonoBehaviour
 
     public QuestManager manager;
     public QuestInfo questInfo;
-
     //private const int maxTitleLength = 45; //if 1280*720 , 36 pt
     //private const int maxTaleLength = 500; //if 1280*720 , 36 pt
 
     public void ShowTale()
     {
-        Time.timeScale = 0f;
         manager.questUI.SetActive(true);
         foreach (TMP_Text text in manager.questUI.GetComponentsInChildren<TMP_Text>())
         {
@@ -40,7 +38,11 @@ public class QuestHandler : MonoBehaviour
         bool isEPressed = Input.GetKey(KeyCode.E);
         if (isEPressed && collision.tag == "Player")
         {
+            InactiveQuestsStruct.currentQuest = questInfo;
             ShowTale();
+        }
+        else if (!manager.questUI.activeSelf && InactiveQuestsStruct.currentQuest != null)
+        {
             foreach (var modName in questInfo.modifiers.Keys)
             {
                 switch (modName)
@@ -65,6 +67,7 @@ public class QuestHandler : MonoBehaviour
                 }
             }
             manager.activeQuests.Remove(questInfo.id);
+            InactiveQuestsStruct.currentQuest = null;
             foreach (var addr in questInfo.nextQuestsAdress)
             {
                 manager.CreateNewQuest(addr);

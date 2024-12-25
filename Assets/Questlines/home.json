@@ -1,0 +1,21 @@
+{
+  "title": "Going home",
+  "id": 7,
+  "tale": "Hooray!",
+  "modifiers": {
+    "thirst": -5,
+    "hunger": -5,
+    "time": 1800,
+    "happiness": 10
+  },
+  "scene": 1,
+  "spawnPos": [ -6.45, -1.17, 0.04 ],
+  "nextQuestsAdress": [
+    "./Assets/questlines/eat.json",
+    "./Assets/questlines/store.json",
+    "./Assets/questlines/shower.json",
+    "./Assets/questlines/drink.json",
+    "./Assets/questlines/talking.json",
+    "./Assets/questlines/cockroach.json"
+  ]
+}

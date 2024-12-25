@@ -1,12 +1,12 @@
 {
-  "title": "",
+  "title": "Start",
   "id": 0,
   "tale": "",
   "modifiers": {
     "thirst": 20
   },
   "scene": 0,
-  "spawnPos": [ 0, 0, 0 ],
+  "spawnPos": [ 0, 0, 0.04 ],
   "nextQuestsAdress": [
     "assets/questlines/eat.json",
     "assets/questlines/drink.json",

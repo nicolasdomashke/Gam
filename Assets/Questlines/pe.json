@@ -1,0 +1,18 @@
+{
+  "title": "Exercising at PE lesson",
+  "id": 16,
+  "tale": "Now I am the boss of the gym",
+  "modifiers": {
+    "thirst": -30,
+    "hunger": -15,
+    "time": 5400,
+    "happiness": 30
+  },
+  "scene": 1,
+  "spawnPos": [ -5.41, -0.11, 0.04 ],
+  "nextQuestsAdress": [
+    "./Assets/questlines/canteen.json",
+    "./Assets/questlines/studying.json",
+    "./Assets/questlines/home.json"
+  ]
+}

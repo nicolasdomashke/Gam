@@ -1,0 +1,18 @@
+{
+  "title": "Doing exercises",
+  "id": 12,
+  "tale": "I'm gonna become a boss of the gym",
+  "modifiers": {
+    "thirst": -20,
+    "hunger": -10,
+    "time": 2700,
+    "happiness": 20
+  },
+  "scene": 0,
+  "spawnPos": [ -5.41, -0.11, 0.04 ],
+  "nextQuestsAdress": [
+    "./Assets/questlines/shower.json",
+    "./Assets/questlines/drink.json",
+    "./Assets/questlines/eat.json"
+  ]
+}

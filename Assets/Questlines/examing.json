@@ -1,0 +1,17 @@
+{
+  "title": "Examing",
+  "id": 15,
+  "tale": "It's hard to remember the things I never knew",
+  "modifiers": {
+    "thirst": -15,
+    "hunger": -15,
+    "time": 5400,
+    "happiness": -10
+  },
+  "scene": 1,
+  "spawnPos": [ -6.45, -1.17, 0.04 ],
+  "nextQuestsAdress": [
+    "./Assets/questlines/canteen.json",
+    "./Assets/questlines/home.json"
+  ]
+}
